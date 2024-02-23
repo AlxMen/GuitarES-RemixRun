@@ -1,9 +1,8 @@
 import imagen from '../../public/img/nosotros.jpg'
 import styles from '~/styles/nosotros.css'
 
-export function meta({ matches }) {
-  let rootMeta = matches[0].meta;
-  let title = rootMeta.find((m) => m.title);
+export function meta() {
+  
   return [
     {
       title: "GuitarLa - Sobre Nosotros",
