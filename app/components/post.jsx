@@ -20,7 +20,7 @@ function Post({ post }) {
         <h3>{Titulo}</h3>
         <p className="fecha">{ formatearFecha(publishedAt) }</p>
         <p className="resumen">{cot.toString()}</p>
-        <Link className="enlace" to={`/post/${url}`}>Leer Publicacion</Link>
+        <Link className="enlace" to={`/blog/${url}`}>Leer Publicacion</Link>
       </div>
     </article>
   );

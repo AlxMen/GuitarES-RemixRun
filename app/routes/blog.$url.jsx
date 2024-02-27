@@ -1,16 +1,6 @@
 import { useLoaderData } from "react-router";
 import { getPost } from "~/models/posts.server";
 import { formatearFecha } from "~/utils/helpers";
-import styles from "~/styles/blog.css"
-
-export function links() {
-  return [
-    {
-      rel: 'stylesheet',
-      href: styles
-    }
-  ]
-}
 
 export function meta({ data }) {
   if (!data) {
@@ -42,8 +32,6 @@ export async function loader({ params }) {
   return post;
 }
 
-
-
 function Post() {
   const post = useLoaderData();
   const { Titulo, cotenido, imagen, publishedAt } = post.data[0].attributes;
@@ -53,7 +41,7 @@ function Post() {
   });
 
   return (
-    <article className="contenedor post mt-3">
+    <article className="post mt-3">
       <img
         className="imagen"
         src={imagen.data.attributes.url}
