@@ -3,10 +3,13 @@ import {
   Meta,
   Links,
   Outlet,
-  Scripts
+  Scripts,
+  useRouteError,
+  isRouteErrorResponse,
+  Link
 } from "@remix-run/react";
 import styles from "~/styles/index.css";
-import Header from "~/components/header"
+import Header from "~/components/header";
 import Footer from "~/components/footer";
 
 export function meta() {
@@ -69,4 +72,19 @@ function Document({ children }) {
       </body>
     </html>
   );
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+
+  if (isRouteErrorResponse(error)) {
+    return (
+      <Document>
+        <p className="error">
+          {error.status} {error.statusText}
+        </p>
+        <Link className="error-enlace" to="/">Volver Inicio</Link>
+      </Document>
+    );
+  }
 }
