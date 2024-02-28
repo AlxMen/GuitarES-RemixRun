@@ -3,7 +3,6 @@
 export default function Curso({ curso }) {
   
   const { contenido, imagen, titulo } = curso
-  console.log(contenido);
 
   return (
     <section className="curso">

@@ -43,7 +43,7 @@ function Guitarra() {
   const { nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
 
   const handleSubmit = e => {
-    e.prevenDefault()
+    e.preventDefault()
 
     if (cantidad < 1) {
       alert('Debes seleccionar una cantidad')
